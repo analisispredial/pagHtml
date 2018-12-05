@@ -3,7 +3,7 @@
 //alert(predial);//DEBUG
  var dataPredial={
     "municipios":{
-    	"Queretaro":{
+    	"Querétaro":{
             "2015":{
             	"tipo":"factor",
                 "factorUrbano":[0.0016],
@@ -100,7 +100,7 @@
 ]
             }
         },
-        "El Marques":{
+        "El Marqués":{
             "2015":{
             	"tipo":"factor",
                 "factorUrbano":[0.0016,0.0004],
@@ -324,7 +324,7 @@
                  ]//Cierre tabla   
             }//Cierre anio
         },//Cierre Municipio concreto
-    	"Leon, Gto":{
+    	"León, Gto":{
             "2018":{
             	"tipo":"factor",
                 "factorUrbano":[0.00234]
@@ -438,6 +438,11 @@ function CalculaPredial(){
             predial=FormateaNum(predial);
             recTab+="$ "+predial;
             if(dif!=0)recTab+= " ("+dif+"%)";
+            if(NombreMunicipio=="El Marqués" && iAnio==2019){
+                recTab+= " <strong>*</strong>"
+            }
+            
+            
             
             recTab+="</td>";
         }else {
