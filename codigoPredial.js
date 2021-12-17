@@ -609,7 +609,7 @@
 //--        
  	}, //Cierre municipios
     "anioInicial":2015,
-    "anioFinal":2020
+    "anioFinal":2021
  };
 
 function CalculaPredialDeTabla(valorCatastral,tabla){
