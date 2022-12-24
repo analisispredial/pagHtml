@@ -1,84 +1,147 @@
 <!DOCTYPE html>
-<html lang='es'>
-  <head>
-    <title>Página de cálculo de predial</title>
-    <meta charset='utf-8'>
-  </head>
-  <body>
-         <script type="text/javascript" src="codigoPredial.js"></script>
-         <h1>Calcula tu predial</h1>
-        <p>Introduce el &quot;Valor catastral&quot; de la propiedad(Sin separador de miles, ni espacios):
-        <br> (Considera que es común que el valor catastral cambie cada año al ajustarse las "Tablas de Valores Unitarios de Suelo y Construcciones". Esta página no considera dichos cambios por lo que el efecto de incremento/decremento real para el usuario final será distinto al mostrado)</p>
-        <p>$&nbsp;<input name="valorCatastral" id="valorCatastral" type="text" value="1500000" onchange="CalculaPredial()"/><input name="botEjecuta" type="button" value="Calcula" onclick="CalculaPredial()" /></p>
-         <div id="valorCtastralFto"></div>
-         <p>El monto a pagar por predial ser&iacute;a el siguiente, sin considerar descuentos, o beneficios especiales:</p> 
-         <div id="resPredial">
-         </div>
-         <script type="text/javascript">CalculaPredial()</script>
-         <p>
-         *En lo que se refiere a El Marqués, el descuento reflejado con respecto al año fiscal 2018, seguramente será menor en proporción al incremento del valor de cada inmueble, atendiendo al aumento que sufrió cada uno en virtud de las Tablas de Valores Unitarios de Suelo y Construcciones para el ejercicio fiscal 2019.
-         </p>
-         
-         <hr />
-         <p>Última modificación: 2019-12-29</p>
-         <h2>Referencias</h2>
-<p>La informaci&oacute;n para el c&aacute;lculo del impuesto predial se encuentra estipulado en la Ley de Ingresos de cada municipio y se publica de forma anual, siendo informaci&oacute;n de uso público.</p>
+<html lang="es">
+<head>
+	<title>P&aacute;gina de c&aacute;lculo de predial</title>
+	<meta charset="utf-8" />
+</head>
+<body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="8.904.0" data-new-gr-c-s-loaded="8.904.0"><script type="text/javascript" src="codigoPredial.js"></script>
+<h1>Calcula tu predial</h1>
+
+<p>Introduce el &quot;Valor catastral&quot; de la propiedad(Sin separador de miles, ni espacios):<br />
+(Considera que es com&uacute;n que el valor catastral cambie cada a&ntilde;o al ajustarse las &quot;Tablas de Valores Unitarios de Suelo y Construcciones&quot;. Esta p&aacute;gina no considera dichos cambios por lo que el efecto de incremento/decremento real para el usuario final ser&aacute; distinto al mostrado)</p>
+
+<p>$&nbsp;<input id="valorCatastral" name="valorCatastral" onchange="CalculaPredial()" type="text" value="1500000" /><input name="botEjecuta" onclick="CalculaPredial()" type="button" value="Calcula" /></p>
+
+<div id="valorCtastralFto">&nbsp;</div>
+
+<p>El monto a pagar por predial ser&iacute;a el siguiente, sin considerar descuentos, o beneficios especiales:</p>
+
+<div id="resPredial">&nbsp;</div>
+<script type="text/javascript">CalculaPredial()</script>
+
+<p>*En lo que se refiere a El Marqu&eacute;s, el descuento reflejado con respecto al a&ntilde;o fiscal 2018, seguramente ser&aacute; menor en proporci&oacute;n al incremento del valor de cada inmueble, atendiendo al aumento que sufri&oacute; cada uno en virtud de las Tablas de Valores Unitarios de Suelo y Construcciones para el ejercicio fiscal 2019.</p>
+
+<hr />
+<p>&Uacute;ltima modificaci&oacute;n: 2022-12-24</p>
+
+<h2>Referencias</h2>
+
+<p>La informaci&oacute;n para el c&aacute;lculo del impuesto predial se encuentra estipulado en la Ley de Ingresos de cada municipio y se publica de forma anual, siendo informaci&oacute;n de uso p&uacute;blico.</p>
+
 <p>Referencias a los documentos &quot;Ley de ingresos del municipio...&quot; consultados para elaborar esta p&aacute;gina:</p>
+
+<h3><strong>Quer&eacute;taro</strong></h3>
+
 <p>Estado de Quer&eacute;taro publica a trav&eacute;s de&nbsp;<a href="http://lasombradearteaga.segobqueretaro.gob.mx/">http://lasombradearteaga.segobqueretaro.gob.mx/</a></p>
-<p>2015: Publicado 24 diciembre 2014</p>
+
+<h4>2015: Publicado 24 diciembre 2014</h4>
+
 <p>Santiago de&nbsp;Quer&eacute;taro. Pag 18441, Predio urbano edificado .0016</p>
+
 <p>El Marqu&eacute;s. Pag 18095: tasa anual del 1.6 al millar para la determinaci&oacute;n y cobro de la contribuci&oacute;n de los predios r&uacute;sticos y urbanos. Sobretasa anual al Impuesto Predial, de 0.4 al millar general.</p>
+
 <p>Corregidora.&nbsp;Pag 17993,&nbsp;Tabla de Valores Progresivos.</p>
+
 <p>&nbsp;</p>
-<p>2016: Publicado 24 diciembre 2015</p>
+
+<h4>2016: Publicado 24 diciembre 2015</h4>
+
 <p>Corregidora, Pag 27535. Tabla progresiva<br />
-El Marqués, Pag 27642. tasa anual del 1.6 al millar para la determinaci&oacute;n y cobro de la contribuci&oacute;n de los predios r&uacute;sticos y urbanos. Sobretasa anual al Impuesto Predial, de 0.4 al millar general.<br />
-Querétaro, Pag 28001 se basa en lo de corregidora y tambien cambia a tablas progresivas.</p>
-<p>2017: Publicado 21 diciembre 2016<br />
-Corregidora: Pag 16997. Tabla progresiva<br />
-El Marqués, copia esquema de tablas progresivas. Pag 17104<br />
-Querétaro, Pag 17545. Tabla progresiva</p>
-<p><br />
-2018: Publicado 20 diciembre 2017<br />
-Corregidora. Pag 27474.&nbsp;Tabla progresiva<br />
-El Marqués. Pag&nbsp; 27586.&nbsp;Tabla progresiva<br />
-Querétaro. Pag 28049.&nbsp;Tabla progresiva<br />
-</p><br />
-2019: Publicado 26 diciembre 2018<br />
-Corregidora. Pag 43216.&nbsp;Tabla progresiva<br />
-El Marqués. Pag&nbsp; 43323.&nbsp;Tabla progresiva<br />
-Querétaro. Pag 43768.&nbsp;Tabla progresiva</p>
-</p><br />
-2020: Publicado 23 diciembre 2019<br />
-Corregidora. Pag 28866.&nbsp;Tabla progresiva<br />
-El Marqués. Pag&nbsp; 28999.&nbsp;Tabla progresiva<br />
-Querétaro. Pag 29495.&nbsp;Tabla progresiva</p>
+El Marqu&eacute;s, Pag 27642. tasa anual del 1.6 al millar para la determinaci&oacute;n y cobro de la contribuci&oacute;n de los predios r&uacute;sticos y urbanos. Sobretasa anual al Impuesto Predial, de 0.4 al millar general.<br />
+Quer&eacute;taro, Pag 28001 se basa en lo de corregidora y tambien cambia a tablas progresivas.</p>
 
+<h4>2017: Publicado 21 diciembre 2016</h4>
+
+<p>Corregidora: Pag 16997. Tabla progresiva<br />
+El Marqu&eacute;s, copia esquema de tablas progresivas. Pag 17104<br />
+Quer&eacute;taro, Pag 17545. Tabla progresiva</p>
+
+<h4><br />
+2018: Publicado 20 diciembre 2017</h4>
+
+<p>Corregidora. Pag 27474.&nbsp;Tabla progresiva<br />
+El Marqu&eacute;s. Pag&nbsp; 27586.&nbsp;Tabla progresiva<br />
+Quer&eacute;taro. Pag 28049.&nbsp;Tabla progresiva</p>
+
+<h4><br />
+2019: Publicado 26 diciembre 2018</h4>
+
+<p>Corregidora. Pag 43216.&nbsp;Tabla progresiva<br />
+El Marqu&eacute;s. Pag&nbsp; 43323.&nbsp;Tabla progresiva<br />
+Quer&eacute;taro. Pag 43768.&nbsp;Tabla progresiva</p>
+
+<h4><br />
+2020: Publicado 23 diciembre 2019</h4>
+
+<p>Corregidora. Pag 28866.&nbsp;Tabla progresiva<br />
+El Marqu&eacute;s. Pag&nbsp; 28999.&nbsp;Tabla progresiva<br />
+Quer&eacute;taro. Pag 29495.&nbsp;Tabla progresiva</p>
 
 <p>&nbsp;</p>
-<p>Le&oacute;n, Guanajuato 2018, publicado 18 Dic 2017, tasa de .234 para construcciones del 2012 a la fecha<br />
+
+<h4>2023: Publicado 23 diciembre 2022</h4>
+
+<p>Corregidora. Pag .&nbsp;Tabla progresiva<br />
+El Marqu&eacute;s. Pag&nbsp; 32172.&nbsp;Tabla progresiva (Sin cambio vs a&ntilde;o anterior)<br />
+Quer&eacute;taro. Pag Tabla progresiva</p>
+
+<p>&nbsp;</p>
+
+<h3>Le&oacute;n, Guanajuato</h3>
+
+<h4>2018, publicado 18 Dic 2017</h4>
+
+<p>tasa de .234 para construcciones del 2012 a la fecha<br />
 http://normatividadestatalymunicipal.guanajuato.gob.mx/normatividadn/archivos.php?arcid=132</p>
-<p>Aguascalientes 2018. publicado 30 nov 2017, p&aacute;gina 29. Tasa predios urbanos edificados: 1.46 al millar<br />
+
+<h3>Aguascalientes</h3>
+
+<h4>2018. publicado 30 nov 2017</h4>
+
+<p>p&aacute;gina 29. Tasa predios urbanos edificados: 1.46 al millar<br />
 https://www.ags.gob.mx/transparencia/cont.aspx?p=217</p>
-<p>Guadalajara 2018. Publicado 16 de dic 2017. P&aacute;gina 24. Tasa Bimestral al millar Predios Urbanos:0.254, por lo que la tasa anual ser&iacute;a multiplicando por 6 = 0.001524<br />
+
+<h3>Guadalajara</h3>
+
+<h4>2018. Publicado 16 de dic 2017</h4>
+
+<p>P&aacute;gina 24. Tasa Bimestral al millar Predios Urbanos:0.254, por lo que la tasa anual ser&iacute;a multiplicando por 6 = 0.001524<br />
 https://periodicooficial.jalisco.gob.mx/periodicos/leyes-de-ingresos</p>
-<p>Guadalajara 2019. Publicado 4 de dic 2018. P&aacute;gina 24. Tabla progresiva<br />
+
+<h4>2019. Publicado 4 de dic 2018.</h4>
+
+<p>P&aacute;gina 24. Tabla progresiva<br />
 https://periodicooficial.jalisco.gob.mx/periodicos/leyes-de-ingresos</p>
-<p>Monterrey 2018. Publicado 29 Diciembre 2017.Tasas y tarifas del impuesto predial 2018 .&nbsp;<br />
+
+<h3>Monterrey</h3>
+
+<h4>2018. Publicado 29 Diciembre 2017</h4>
+
+<p>Tasas y tarifas del impuesto predial 2018 .&nbsp;<br />
 El Impuesto Predial se determinar&aacute; y pagar&aacute;, aplicando a la base del<br />
 Impuesto una tasa del 2 al millar anual<br />
 http://portal.monterrey.gob.mx/transparencia/.2_marco_programatico_presupuestal.html</p>
-<p>CDMX 2018.<br />
-2015<br />
-Código fiscal, artículo 130. Tabla progresiva, se actualizan los datos 22 dic 2014<br />
-http://www.caepccm.df.gob.mx/doctos/transparencia2012/Art14fracI/Codigo_fiscal_df_29012015.pdf<br />
-2016<br />
-http://www.paot.org.mx/centro/codigos/df/pdf/2016/CODIGO_FISCAL_DF_30_12_2015.pdf<br />
-2017<br />
-GACETA OFICIAL DE LA CIUDAD DE MÉXICO 29 de Diciembre de 2016.  Artículo 130. Tabla progresiva<br />
-http://data.consejeria.cdmx.gob.mx/portal_old/uploads/gacetas/f35e9460e477a28b02bc3d4ad7f4cbf5.pdf<br />
-2018 Tabla progresiva<br />
+
+<h3>CDMX</h3>
+
+<h4>2015</h4>
+
+<p>C&oacute;digo fiscal, art&iacute;culo 130. Tabla progresiva, se actualizan los datos 22 dic 2014<br />
+http://www.caepccm.df.gob.mx/doctos/transparencia2012/Art14fracI/Codigo_fiscal_df_29012015.pdf</p>
+
+<h4>2016</h4>
+
+<p>http://www.paot.org.mx/centro/codigos/df/pdf/2016/CODIGO_FISCAL_DF_30_12_2015.pdf</p>
+
+<h4>2017</h4>
+
+<p>GACETA OFICIAL DE LA CIUDAD DE M&Eacute;XICO 29 de Diciembre de 2016. Art&iacute;culo 130. Tabla progresiva<br />
+http://data.consejeria.cdmx.gob.mx/portal_old/uploads/gacetas/f35e9460e477a28b02bc3d4ad7f4cbf5.pdf</p>
+
+<h4>2018</h4>
+
+<p>Tabla progresiva<br />
 http://www.finanzas.cdmx.gob.mx/avisos_programas/avisos-y-programas/impuesto-predial<br />
 https://data.finanzas.cdmx.gob.mx/tesoreria/Predial/inmuebles_habitacionales.html</p>
-  </body>
+</body>
 </html>

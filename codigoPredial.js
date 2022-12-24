@@ -609,7 +609,7 @@
 //--        
  	}, //Cierre municipios
     "anioInicial":2015,
-    "anioFinal":2022
+    "anioFinal":2023
  };
 //A partir de 2021, se actualiza por partes para hacer mas facil el proceso, y evitar error en el JSON Inicial que ya es muy grande. En 2021 se mantuvo exactamente mismas tablas por pandemia
 dataPredial["municipios"]["El Marqués"]["2021"]={"tipo":"tabla","tabla":[       //Es un arreglo de los rangos. //cada rango define limite inferior, limite superior, cuota fija, y tarifa excedente
@@ -726,6 +726,9 @@ dataPredial["municipios"]["El Marqués"]["2022"]={"tipo":"tabla","tabla":[      
 ,[6127678.42,9999999999.99,23807.27,0.00464]
 ]
 };
+
+//2023
+dataPredial["municipios"]["El Marqués"]["2023"]=dataPredial["municipios"]["El Marqués"]["2022"]; //No cambio para 2023
 
 function CalculaPredialDeTabla(valorCatastral,tabla){
     var nTabla=tabla.length;
